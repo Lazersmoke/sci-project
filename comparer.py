@@ -1,7 +1,7 @@
 import time
 from os import system as oscaller
 from os import name as osname
-myfile=open('formatedoutputfile.txt','w')
+myfile=open('output.txt','w')
 tests=int(input('How many repetitions? '))
 NUM_TRIALS=int(input('How many calls go into the average? '))
 integratedlag=bool(input('Compensate for lag?(0 or 1) '))

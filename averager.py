@@ -1,5 +1,5 @@
-newfile=open('outputfile.txt','r')
-xfile=open('xfile.txt','w')
+newfile=open('messy.txt','r')
+xfile=open('breakdown.txt','w')
 pyarr=[]
 intpyarr=[]
 jarr=[]
@@ -25,15 +25,19 @@ pytot=0
 intpytot=0
 jtot=0
 perltot=0
+xfile.write('Python Results:\n')
 for n in pyarr:
 	xfile.write(str(n)+'\n')
 	pytot+=n
+xfile.write('Integrated Python Results:\n')
 for n in intpyarr:
 	xfile.write(str(n)+'\n')
 	intpytot+=n
+xfile.write('Java Results:\n')
 for n in jarr:
 	xfile.write(str(n)+'\n')
 	jtot+=n
+xfile.write('Perl Results:\n')
 for n in perlarr:
 	xfile.write(str(n)+'\n')
 	perltot+=n

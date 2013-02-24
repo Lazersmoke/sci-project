@@ -1,7 +1,7 @@
 import time
 from os import system as oscaller
 from os import name as osname
-myfile=open('outputfile.txt','w')
+myfile=open('messy.txt','w')
 NUM_TRIALS=1
 tests=int(input('How many tests? '))
 integratedlag=bool(input('Compensate for lag?(0 or 1) '))
