@@ -1,0 +1,55 @@
+import time
+from os import system as oscaller
+def timer(commander):
+	lister=[]	
+	timestart=time.time()
+	oscaller(commander)
+	timeend=time.time()
+	return timeend-timestart
+pyarr=[]
+intpyarr=[]
+jarr=[]
+parr=[]
+for z in range(9):
+	print('Test #'+str(z+1))
+	timeVmpy=timer('python3 Vm.py')
+	timeXmpy=timer('python3 Xm.py')
+	timepy=timeXmpy-timeVmpy
+	#print('Python took '+str(timepy)+' to do 10 Million operations')
+	print('Python: '+str(10/timepy)+' MFLOPS')
+	pyarr.append(10/timepy)
+	
+	timeVmpy=timer('python3 Vm.py')
+	timeXmpy=timer('python3 Xm.py')
+	timepy=timeXmpy-timeVmpy
+	#print('Python took '+str(timepy)+' to do 10 Million operations')
+	print('Integrated Python: '+str(10/timepy)+' MFLOPS')
+	intpyarr.append(10/timepy)
+
+	timeVmj=timer('java Vm')
+	timeXmj=timer('java Xm')
+	timej=timeXmj-timeVmj
+	#print('Java took '+str(timej)+' to do 10 Million operations')
+	if((10/timej)>=0):
+		print('Java: '+str(10/timej)+' MFLOPS')
+	else:
+		print('Java: Too fast for this prgram to handle! ('+str(10/timej)+')')
+	jarr.append(10/timej)
+	
+	timeVmp=timer('perl Vm.perl')
+	timeXmp=timer('perl Xm.perl')
+	timep=timeXmp-timeVmp
+	#print('Perl took '+str(timep)+' to do 10 Million operations')
+	print('Perl: '+str(10/timep)+' MFLOPS')
+	parr.append(10/timep)
+
+xfile=open('xfile.txt','w')
+for n in pyarr:
+	xfile.write(str(n)+'\n')
+for n in intpyarr:
+	xfile.write(str(n)+'\n')
+for n in jarr:
+	xfile.write(str(n)+'\n')
+for n in parr:
+	xfile.write(str(n)+'\n')
+
